@@ -40,7 +40,7 @@
             map = new google.maps.Map(document.getElementById("map"), propiedades);
 
             var icono = {
-                url : "https://giphy.com/gifs/map-petleo-petleoapp-M5ZcPMlPz53TFSRrdP",
+                url : "https://giphy.com/embed/M5ZcPMlPz53TFSRrdP",
                 scaledSize: new google.maps.Size(50,50),
                 origin: new google.maps.Point(0,0),
                 anchor: new google.maps.Point(0,0)
@@ -52,14 +52,12 @@
                 map: map
             });
             if(navigator.geolocation){
-
-                setInterval( ()=>{
-                    moverPosicion();
+                setInterval( ()=> {
+                    moverPosicion(marker);
                 },5000);
             }
             function moverPosicion(marker) {
                 navigator.geolocation.getCurrentPosition( posicion =>{
-
                     var pos = {
                         lat: posicion.coords.latitude,
                         lng: posicion.coords.longitude
@@ -67,7 +65,7 @@
                     console.table(pos);
                     marker.setPosition(pos);
                     map.panTo(pos);
-                    //map.setCenter(pos);
+                    map.setCenter(pos);
                 });
             }
         }
