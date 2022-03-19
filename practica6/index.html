@@ -20,11 +20,9 @@
 <body>
     
     <div id="map"></div>
-
     <script>
 
         var map;
-
         var coordenadas = {
             lat: 0,
             lng: 0
@@ -36,11 +34,11 @@
         }
 
         function iniciaMapa() {
-    
+
             map = new google.maps.Map(document.getElementById("map"), propiedades);
 
             var icono = {
-                url : "https://media.giphy.com/media/1ZweHMlSaxcc32mSSu/giphy.gif",
+                url : "https://giphy.com/embed/M5ZcPMlPz53TFSRrdP",
                 scaledSize: new google.maps.Size(50,50),
                 origin: new google.maps.Point(0,0),
                 anchor: new google.maps.Point(0,0)
@@ -53,10 +51,10 @@
             });
             if(navigator.geolocation){
                 setInterval( ()=> {
-                    moverPosicion(marker);
+                    moverPosicion();
                 },5000);
             }
-            function moverPosicion(marker) {
+            function moverPosicion() {
                 navigator.geolocation.getCurrentPosition( posicion =>{
                     var pos = {
                         lat: posicion.coords.latitude,
@@ -65,7 +63,7 @@
                     console.table(pos);
                     marker.setPosition(pos);
                     map.panTo(pos);
-                    map.setCenter(pos);
+                    //map.setCenter(pos);
                 });
             }
         }
