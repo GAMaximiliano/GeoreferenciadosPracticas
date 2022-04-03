@@ -41,8 +41,12 @@
                             var infoWindow = new google.maps.InfoWindow({
                             content: informacion
                         });
+                        var icono = {
+                        url : "https://media4.giphy.com/media/JVs3vmt2O4n1P0dUso/giphy.gif"
+                        }
                         let marker = new google.maps.Marker({
                             map: map,
+                            icon: icono,
                             position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
                             title: marcador.CountryName
                         });
