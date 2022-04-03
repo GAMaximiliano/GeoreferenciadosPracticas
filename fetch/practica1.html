@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 951601f2239c18acf4e959e12f3da55f76eccf19
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica1 Fetch</title>
 </head>
+<<<<<<< HEAD
 <body>
     
 <div id="paises"></div>
+=======
+
+<body>
+
+    <div id="paises"></div>
+>>>>>>> 951601f2239c18acf4e959e12f3da55f76eccf19
 
     <script>
 
         var paises = document.getElementById("paises");
+<<<<<<< HEAD
         fetch("https://sistemasgeo.com/2022/fetch/datos.json")
         .then( function(response){
             response.json().then( function(datos){
@@ -27,4 +39,23 @@
     </script>
 
 </body>
+=======
+        fetch("./datos.json")
+            .then(function (response) {
+                response.json()
+                    .then(function (datos) {
+                        console.log(datos)
+                        datos.forEach(registro => {
+                            console.log(registro.country);
+                            let nombre = document.createElement("p");
+                            nombre.textContent = "Pais:" + registro.country + ", casos:" + registro.cases;
+                            paises.appendChild(nombre);
+                        });
+                    });
+            });
+    </script>
+
+</body>
+
+>>>>>>> 951601f2239c18acf4e959e12f3da55f76eccf19
 </html>
